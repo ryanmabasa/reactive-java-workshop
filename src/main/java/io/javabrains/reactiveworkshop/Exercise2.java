@@ -8,12 +8,17 @@ public class Exercise2 {
 
         // Use ReactiveSources.intNumbersFlux() and ReactiveSources.userFlux()
 
+
         // Print all numbers in the ReactiveSources.intNumbersFlux stream
-        // TODO: Write code here
+        //Whenever I get a new number in the stream, then you should run subscribe
+        ReactiveSources.intNumbersFlux()
+                .subscribe(e -> System.out.println(e));
 
         // Print all users in the ReactiveSources.userFlux stream
-        // TODO: Write code here
+        //Call the subscribe method whenever it emits an event
+        ReactiveSources.userFlux().subscribe(user -> System.out.println(user));
 
+        //Events are gradually coming
         System.out.println("Press a key to end");
         System.in.read();
     }
